@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)file:///C:/Users/Arnv/CALC/CALC.HTML -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./CALCULATOR_files/css2" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(c);
+            
+            background-size: cover;
+        }
+        .layout {
+            backdrop-filter:blur(90px);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+            background-image: url(xjhf/sure.jpg);
+            
+
+            
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            height: 530px;
+            box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.3);
+            width:360px;
+            margin-left: 380px;
+            border-radius: 40px;
+            ;
+
+            
+
+        }
+        .nums {
+            display: flex;
+            flex-direction: row;
+
+
+        }
+        .p-line {
+            display: flex;
+            flex-direction: row;
+        }
+        .display {
+            display: flex;
+            flex-direction: row;
+        }
+        .num {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            background-color: transparent;
+            height: 85px;
+            width: 85px;
+            border : none;
+            border-radius: 32px;
+            box-shadow: 2px 2px  black;
+            font-size: 28px;
+            color: rgb(20, 29, 36);
+            background-color: rgba(23, 46, 62,0.1);
+            color: azure;
+            
+
+        
+        }
+        .input{
+            background-color: transparent;
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            margin-right: 60px;
+            margin-bottom: 10px;
+
+            
+            
+            height: 35px;
+            width: 250px;
+            border: none;
+           
+            border-radius: 10px;
+
+            
+            font-size: 40px;
+           
+            color: rgb(125, 178, 247);
+            
+        }
+
+        
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+
+<body>
+    <div class="layout">
+    
+        <div class="display">
+            <input type="text" class="input" name="display">
+
+        </div>
+        
+            
+
+        
+        <div class="p-line">
+            <button class="num" onclick="">AC</button>
+            <button class="num" onclick="">Back</button>
+            <button class="num"></button>
+            <button class="num">+</button>
+        </div>
+        <div class="nums">
+            <button class="num">7</button> 
+            <button class="num">8</button>
+            <button class="num">9</button>
+            <button class="num">-</button>
+
+        </div>
+        <div class="nums">
+            <button class="num">4</button>
+            <button class="num">5</button>
+            <button class="num">6</button>
+            <button class="num">*</button>
+        </div>
+        <div class="nums">
+            <button class="num">1</button>
+            <button class="num">2</button>
+            <button class="num">3</button>
+            <button class="num">/</button>
+        </div>
+        <div class="nums">
+            <button class="num">%</button>
+            <button class="num">0</button>
+            <button class="num">.</button>
+            <button class="num">=</button>
+        </div>
+
+    </div>
+    <script>
+        let string = ''
+        let buttons = document.querySelectorAll('.num');
+        Array.from(buttons).forEach((num)=>{
+                num.addEventListener('click',  (e)=>{
+                    if (e.target.innerHTML == '='){
+                        string = eval(string)
+                        document.querySelector('input').value = string;
+                        console.log(string)
+
+                    } else if  (e.target.innerHTML == 'AC'){
+                        string = ''
+                        document.querySelector('input').value = string;
+                        console.log(string)
+
+
+
+
+                    } else if (e.target.innerHTML == 'Back'){
+                        string = string.slice(0,string.length - 1)
+                        document.querySelector('input').value = string;
+                        console.log(string)
+
+                    } else{
+                        string = string + e.target.innerHTML;
+                        document.querySelector('input').value = string;
+                    }
+
+                    
+                        
+                    
+                    
+                    
+                })
+        })
+            
+        
+
+        
+
+        
+        
+    </script>
+
+
+
+</body></html>
